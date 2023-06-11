@@ -1,0 +1,241 @@
+/* loading page */
+#loading-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 10;
+}
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader video{
+    width: 30vw;
+    height: auto;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.fade-out {
+    opacity: 0;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#content {
+    display: none;
+}
+  
+/* default */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    border: 0;
+    vertical-align: top;
+}
+
+body{
+    margin: 0;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* fonts */
+
+
+@font-face {
+    font-family: 'SUIT';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+}
+
+h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+p{
+    font-family: 'SUIT';
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+/* bg & gnb */
+
+#content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.bg .tit-bg img{
+    height: 100%;
+    width: 100%;
+}
+
+.bg .date{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30vh;
+}
+
+.bg .date img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.nav{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 1000px;
+    height: 1000px;
+    display: flex;
+    justify-content: flex-start;
+}
+.nav .box{
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 11px;
+}
+
+.nav #box-1{
+    position: fixed;
+    top: 33vh;
+    /* top: 310px; */
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav #box-2{
+    padding-right: 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+.nav #box-3{
+    position: fixed;
+    /* top: 61vh;
+    left: 25vw; */
+    /* top: 570px; */
+    top: 60vh;
+    left: 435px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav .team{
+    position: fixed;
+    /* top: 37vh;
+    left: 15vw; */
+    /* top: 350px; */
+    top: 33vh;
+    left: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.nav .team img{
+    width: 1.1vw;
+}
+.nav .box{
+    cursor:grab;
+}
+.nav .team .box h2 a{
+
+}
+
+.nav .box h2 a:hover{
+    text-decoration: underline;
+}
+
+.nav .team .box .gnb{}
+.nav .team .box .gnb li{}
+.nav .team .box .gnb li a{
+    font-family: 'Montserrat';
+    font-weight: light;
+    font-size: 1.1rem;
+}
+.nav .team .box .gnb li a:hover{
+    color: #777777;
+}
+
+.nav .box .etc #ins{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav .box .etc img{
+    padding-left: 5px;
+    height: 2vh;
+}
+
+.logo{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+.logo img{
+    width: 2vw;
+    z-index: 2;
+}
+
+/* 드래그 방지 */
+.no-select {
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* 일반적인 방식 */
+}

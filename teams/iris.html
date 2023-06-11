@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/team.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/script.js"></script>
+    <!-- favicon -->
+    <link href="img/logo/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="img/logo/favicon.png" rel="apple-touch-icon">
+    <!-- favicon end -->
+    <title>PRISM LAB: IRIS</title>
+</head>
+<body>
+    <div id="image-container">
+        <button id="remove-button">X</button>
+        <img id="draggable-image" src="../img/poster/posterA1-07.png" alt="Image">
+      </div>      
+    <div class="wrap">
+        <ul class="nav">
+            <div class="nav-gnb">
+                <li>
+                    <h2><a href="../exhibition.html">2022 EXHIBITION</a></h2>
+                </li>
+                <li>
+                    <h2>TEAMS</h2>
+                    <ul class="gnb">
+                        <li><a href="../teams/mrs.html">MRS.</a></li>
+                        <li><a href="../teams/cozy.html">COZY</a></li>
+                        <li><a href="../teams/connection.html">CONNECTION</a></li>
+                        <li><a href="../teams/ourex.html">OUR EX-</a></li>
+                        <li><a href="../teams/iris.html">IRIS</a></li>
+                        <li><a href="../teams/division.html">DIVISION</a></li>
+                        <li><a href="../teams/breath.html">BREATH</a></li>
+                        <li><a href="../teams/priker.html">PRIKER</a></li>
+                        <li><a href="../teams/potion.html">POTION</a></li>
+                        <li><a href="../teams/tainus.html">TAINUS</a></li>
+                        <li><a href="../teams/vivid.html">VIVID</a></li>
+                        <li><a href="../teams/ss.html">SWITCH-SWAP</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="etc">
+                        <h2><a href="../goods.html">GOODS<div class="border"></div></a></h2>
+                        <h2><a href="../archive.html">ARCHIVE</a></h2>
+                        <h2 id="ins"><a href="https://www.instagram.com/hivcd.prism/" target="_blank">INSTAGRAM</a><img src="../img/arrow.svg" alt="arrow"></h2>
+                    </div>
+                </li>
+            </div>
+            
+            <div class="logo">
+                <a href="../index.html"><img src="../img/logo/black.png" alt="logo-bl"></a>
+            </div>
+            <img src="../img/IRIS.svg" alt="tag">
+        </ul>
+        <div class="wrapper">
+            <div class="gal">
+                <ul class="slider">
+                  <li><img src="../img/teams/Iris/[prism]-091.jpg" alt="MRS.1"></li>
+                  <li><img src="../img/teams/Iris/[prism]-012.jpg" alt="MRS.2"></li>
+                  <li><img src="../img/teams/Iris/[prism]-011.jpg" alt="MRS.3"></li>
+                </ul>
+                <div class="prev"><img src="../img/left-arrow.svg" alt=""></div>
+                <div class="next"><img src="../img/right-arrow.svg" alt=""></div>
+            </div>           
+              <script>
+                $(document).ready(function() {
+                const slider = $('.slider');
+                const prevBtn = $('.prev');
+                const nextBtn = $('.next');
+
+                let currentPosition = 0;
+
+                function updateSlideWidth() {
+                    const slideWidth = $('.gal').width();
+                    const slideCount = $('.slider li').length;
+                    const sliderWidth = slideWidth * slideCount;
+
+                    $('.slider').css('width', sliderWidth + 'px');
+                    $('.slider li').css('width', slideWidth + 'px');
+                }
+
+                updateSlideWidth();
+
+                prevBtn.click(function() {
+                    currentPosition += $('.gal').width();
+                    if (currentPosition > 0) {
+                    currentPosition = -$('.gal').width() * ($('.slider li').length - 1);
+                    }
+                    slider.css('transform', `translateX(${currentPosition}px)`);
+                });
+
+                nextBtn.click(function() {
+                    currentPosition -= $('.gal').width();
+                    if (currentPosition < -$('.gal').width() * ($('.slider li').length - 1)) {
+                    currentPosition = 0;
+                    }
+                    slider.css('transform', `translateX(${currentPosition}px)`);
+                });
+
+                $(window).resize(function() {
+                    updateSlideWidth();
+                    currentPosition = 0;
+                    slider.css('transform', `translateX(${currentPosition}px)`);
+                });
+                });
+
+              </script>   
+            <div class="exp">
+              <div class="name">
+                <div class="tit-name">
+                    <div class="tit-eng"><h2>Iris</h2></div>
+                    <div class="tit-ko"><h2>홍채(虹債)</h2></div>
+                </div>
+                <div class="cla">
+                    <div class="square" id="iris"></div>
+                    <h2>GRAPHIC</h2>
+                </div>
+                <div class="mem-name">
+                    <h2>Jeon Dahyun</h2>
+                  <h2>전다현</h2>
+                </div>
+              </div>
+              <div class="des">
+                <p><b>무지개 홍(紅), 빛 채(債)</b><br><br>
+                    빛을 받은 눈동자의 색깔이 단순한 한 가지가 아닌 여러 빛깔로 섞여있는 것을 보고 꼭 프리즘을 통과한 빛 같다고 생각했다. 이것에서 착안하여 전시 주제인 프리즘을 투명한 구가 매질이 되어 다양한 홍채 색으로 나타난다는 해석으로 표현해보고자 한다. 작업에 사용된 색상들은 모두 실제 지구 상에 존재하는 홍채의 색깔에서 수집하였다.</p>
+              </div>
+              </div>
+            </div>
+        </div>
+          
+    </div>
+</body>
+</html>

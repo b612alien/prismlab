@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/team.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/script.js"></script>
+    <!-- favicon -->
+    <link href="img/logo/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="img/logo/favicon.png" rel="apple-touch-icon">
+    <!-- favicon end -->
+    <title>PRISM LAB: CONNECTION</title>
+</head>
+<body>
+    <div id="image-container">
+        <button id="remove-button">X</button>
+        <img id="draggable-image" src="../img/poster/posterA1-04.png" alt="Image">
+      </div>      
+    <div class="wrap">
+        <ul class="nav">
+            <div class="nav-gnb">
+                <li>
+                    <h2><a href="../exhibition.html">2022 EXHIBITION</a></h2>
+                </li>
+                <li>
+                    <h2>TEAMS</h2>
+                    <ul class="gnb">
+                        <li><a href="../teams/mrs.html">MRS.</a></li>
+                        <li><a href="../teams/cozy.html">COZY</a></li>
+                        <li><a href="../teams/connection.html">CONNECTION</a></li>
+                        <li><a href="../teams/ourex.html">OUR EX-</a></li>
+                        <li><a href="../teams/iris.html">IRIS</a></li>
+                        <li><a href="../teams/division.html">DIVISION</a></li>
+                        <li><a href="../teams/breath.html">BREATH</a></li>
+                        <li><a href="../teams/priker.html">PRIKER</a></li>
+                        <li><a href="../teams/potion.html">POTION</a></li>
+                        <li><a href="../teams/tainus.html">TAINUS</a></li>
+                        <li><a href="../teams/vivid.html">VIVID</a></li>
+                        <li><a href="../teams/ss.html">SWITCH-SWAP</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="etc">
+                        <h2><a href="../goods.html">GOODS<div class="border"></div></a></h2>
+                        <h2><a href="../archive.html">ARCHIVE</a></h2>
+                        <h2 id="ins"><a href="https://www.instagram.com/hivcd.prism/" target="_blank">INSTAGRAM</a><img src="../img/arrow.svg" alt="arrow"></h2>
+                    </div>
+                </li>
+            </div>
+            
+            <div class="logo">
+                <a href="../index.html"><img src="../img/logo/black.png" alt="logo-bl"></a>
+            </div>
+            <img src="../img/CONNECTION.svg" alt="tag">
+        </ul>
+        <div class="wrapper">
+            <div class="gal">
+                <ul class="slider">
+                  <li><img src="../img/teams/Connection/[prism]-068.jpg" alt="MRS.1"></li>
+                  <li><img src="../img/teams/Connection/[prism]-101.jpg" alt="MRS.2"></li>
+                  <li><img src="../img/teams/Connection/[prism]-070.jpg" alt="MRS.3"></li>
+                </ul>
+                <div class="prev"><img src="../img/left-arrow.svg" alt=""></div>
+                <div class="next"><img src="../img/right-arrow.svg" alt=""></div>
+              </div>           
+              <script>
+                $(document).ready(function() {
+                const slider = $('.slider');
+                const prevBtn = $('.prev');
+                const nextBtn = $('.next');
+
+                let currentPosition = 0;
+
+                function updateSlideWidth() {
+                    const slideWidth = $('.gal').width();
+                    const slideCount = $('.slider li').length;
+                    const sliderWidth = slideWidth * slideCount;
+
+                    $('.slider').css('width', sliderWidth + 'px');
+                    $('.slider li').css('width', slideWidth + 'px');
+                }
+
+                updateSlideWidth();
+
+                prevBtn.click(function() {
+                    currentPosition += $('.gal').width();
+                    if (currentPosition > 0) {
+                    currentPosition = -$('.gal').width() * ($('.slider li').length - 1);
+                    }
+                    slider.css('transform', `translateX(${currentPosition}px)`);
+                });
+
+                nextBtn.click(function() {
+                    currentPosition -= $('.gal').width();
+                    if (currentPosition < -$('.gal').width() * ($('.slider li').length - 1)) {
+                    currentPosition = 0;
+                    }
+                    slider.css('transform', `translateX(${currentPosition}px)`);
+                });
+
+                $(window).resize(function() {
+                    updateSlideWidth();
+                    currentPosition = 0;
+                    slider.css('transform', `translateX(${currentPosition}px)`);
+                });
+                });
+
+              </script>   
+            <div class="exp">
+              <div class="name">
+                <div class="tit-name">
+                    <div class="tit-eng"><h2>Connection</h2></div>
+                    <div class="tit-ko"><h2>관계, 감정</h2></div>
+                </div>
+                <div class="cla">
+                    <div class="square" id="con"></div>
+                    <h2>GRAPHIC</h2>
+                </div>
+                <div class="mem-name">
+                    <h2 id="long">Kim Chaeyeon</h2>
+                  <h2>김채연</h2>
+                </div>
+              </div>
+              <div class="des">
+                <p>관계는 한 대상을 인지하면서 시작되고, 인지는 그 대상과 부딪히며 시작된다. 대상과 부딪히면서 감정이 생기고 이것이 그 관계에서만 생길 수 있는 감정이다. 
+                    수 많은 관계와 그 사이에서 생겨나는 감정들을 보여주는 프리즘. 바로 이 책이다. </p>
+              </div>
+              </div>
+            </div>
+        </div>
+          
+    </div>
+</body>
+</html>
