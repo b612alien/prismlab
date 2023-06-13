@@ -162,12 +162,12 @@ p {
     aspect-ratio: attr(width) / attr(height);
     max-height: 100%;
     background-color: transparent;
-    filter: grayscale(100%);
+    /* filter: grayscale(100%); */
     transition: fade-out 0.3s ease;
 }
 
 .exh img:hover, .exh video:hover {
-    /* opacity: 70%; */
+    opacity: 70%;
     filter: grayscale(0%);
 }
 
